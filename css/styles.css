@@ -34,7 +34,7 @@ span {
   padding: 1rem;
   text-transform: uppercase;
   font-weight: bolder;
-  background-color: #46454b;
+  background-color: #fff;
   position: fixed;
   border-radius: 5px;
   right: 0;
@@ -48,11 +48,12 @@ span {
   visibility: hidden;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  color: #46454b;
 }
 
 span:hover {
-  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.6), 0 1px 10px rgba(255, 255, 255, 0.8);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.6), 0 1px 10px rgba(255, 255, 255, 0.8);
 }
 
 .display-up {
@@ -103,10 +104,6 @@ section {
   position: relative;
   min-height: 80vh;
   margin: auto;
-}
-
-.collapse-section {
-  display: block !important;
 }
 
 /* ---- Module Rules ---- */
@@ -259,31 +256,6 @@ section:nth-of-type(3n + 1) .landing__container::after {
   opacity: 0;
   -webkit-transition: ease 0.5s all;
   transition: ease 0.5s all;
-}
-
-.collapse {
-  position: relative;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.05rem;
-  border: none;
-  cursor: pointer;
-  padding: 1rem;
-  background-color: #46454b;
-  color: #fff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  overflow: hidden !important;
-  z-index: 2;
-}
-
-.collapse:hover {
-  background-color: #00aabb;
-  color: #f43530;
-}
-
-.collapse:focus {
-  outline-style: none;
 }
 
 /* ---- Theme State Rules ---- */
