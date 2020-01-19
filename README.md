@@ -15,14 +15,16 @@ For specific, detailed instructions, look at the project instructions in the Uda
 
 ## Functions
 
-### Main functions
-
-* [UIController](#uicontroller)
-* [RUN](#run)
-
 ### UIController
 
 UIController, takes as an argument dom elements, to have control over the dom dynamicaly, which retruns functions that help modify the state of elements such as hide and show, and other functions that create dom elements, which are:
-createNavBar: creates the navbar according to sections number.
-createCollipsableBtn: creates buttons according to sections number, which they are used in collapsing those sections.
-### Helper functions
+#### createNavBar: 
+creates the navbar according to sections number.
+#### createCollapsibleBtn: 
+creates buttons according to sections number, which they are used in collapsing those sections.
+#### isInViewPort:
+check if the section is within the boundries of the viewport or not.
+
+### RUN
+
+run() is an IIFE, which contains the main code and the event listeners: click and scroll events, it takes as arguments the UIController function and the domElements.   
