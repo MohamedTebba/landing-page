@@ -92,8 +92,11 @@ const UIController = domElements => {
     };
 };
 
+
+
 (function run(domElements, UIController) {
 
+    //create the navbar
     domElements().ulList.appendChild(
         UIController().createNavBar(domElements().sections)
     );
@@ -101,17 +104,19 @@ const UIController = domElements => {
     const listItemsArr = Array.from(domElements().listItems);
     const sectionsArr = Array.from(domElements().sections);
 
-    /*----------*/
+    /**create and control collapsible sections */
     sectionsArr.forEach(section =>
         UIController().createCollipsableBtn(section, section.dataset.nav)
     );
-
     addEventListener("click", UIController(domElements).collapseSection);
-    /*----------*/
+    /**END/ create and control collapsible sections */
 
+    /** control over the scroll event */
     let isScrolling;
-
     addEventListener("scroll", () => {
+        
+        /**control over the active section */
+
         //reseting any active link to the default state,
         // to be ready for the next link to be active
         listItemsArr.forEach(li => UIController(domElements).removeActiveLink(li));
@@ -128,11 +133,14 @@ const UIController = domElements => {
                 );
             }
         });
+        /**END/ control over the active section */
 
+
+        /*control the visibility of the navbar*/
         clearTimeout(isScrolling);
-
+        
         UIController(domElements).displayNavbar(domElements().header);
-
+        
         if (pageYOffset > innerHeight) {
             UIController(domElements).showUpBtn(domElements().toUp);
             isScrolling = setTimeout(() => {
@@ -141,9 +149,12 @@ const UIController = domElements => {
         } else {
             UIController(domElements).hideUpBtn(domElements().toUp);
         }
+        /*END/ navabar visibility control*/
     });
+    /**END/ control over the scroll event */
 
-    domElements().toUp.addEventListener("click", () => {
-        scrollTo(0, 0);
-    });
+
+    //go to up
+    domElements().toUp.addEventListener("click", () => scrollTo(0, 0));
+
 })(domElements, UIController);
