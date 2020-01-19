@@ -80,8 +80,8 @@ const UIController = domElements => {
             /**
              * why I substracted 4% from the offsetTop and 4% from the offsetBottom?, I used it to adjust the sensitivity of the section when it reaches a near spot of the top of the viewport.
              */
-            return offsetTop - (offsetTop * 4) / 100 <= scrollTop &&
-                offsetBottom - (offsetBottom * 4) / 100 > scrollTop ?
+            return (offsetTop - (offsetTop * 4 / 100) <= scrollTop &&
+                offsetBottom - (offsetBottom * 4 / 100) > scrollTop) ?
                 true :
                 false;
         },
